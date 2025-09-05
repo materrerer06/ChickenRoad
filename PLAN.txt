@@ -1,0 +1,221 @@
+1. Game.java
+
+Pola:
+
+GamePanel gamePanel
+
+int playerMoney
+
+boolean gameOver
+
+int betAmount
+
+boolean isBetting
+
+Metody:
+
+public static void main(String[] args)
+
+public void startGame()
+
+public void endGame(boolean win)
+
+public void betOnLevel(int amount)
+
+public void adjustPlayerMoney(int amount)
+
+public void showGameOverScreen()
+
+2. GamePanel.java
+
+Pola:
+
+Chicken chicken
+
+ArrayList<Car> cars
+
+Road road
+
+InputHandler inputHandler
+
+Timer timer
+
+boolean gameOver
+
+boolean isBetting
+
+int betAmount
+
+int level
+
+int score
+
+Metody:
+
+public void paintComponent(Graphics g)
+
+public void update()
+
+public void startGame()
+
+public void gameOver()
+
+public void placeBet(int amount)
+
+public void onKeyPress(KeyEvent e)
+
+public void resetGame()
+
+3. Chicken.java
+
+Pola:
+
+int x, y
+
+int width, height
+
+int speed
+
+int moneySpent
+
+boolean isAlive
+
+boolean isMoving
+
+Metody:
+
+public void moveUp()
+
+public void moveDown()
+
+public void moveLeft()
+
+public void moveRight()
+
+public void update()
+
+public void draw(Graphics g)
+
+public void respawn()
+
+public void die()
+
+4. Car.java
+
+Pola:
+
+int x, y
+
+int width, height
+
+int speed
+
+boolean isMoving
+
+int lane
+
+boolean isVisible
+
+Metody:
+
+public void update()
+
+public void draw(Graphics g)
+
+public void move()
+
+public boolean checkCollision(Rectangle bounds)
+
+5. Road.java
+
+Pola:
+
+ArrayList<Car> cars
+
+int roadWidth
+
+int laneCount
+
+int roadHeight
+
+int speed
+
+Metody:
+
+public void generateCars()
+
+public void moveCars()
+
+public void draw(Graphics g)
+
+public void removeOutOfBoundsCars()
+
+6. GameObject.java
+
+Pola:
+
+int x, y
+
+int width, height
+
+Rectangle bounds
+
+Metody:
+
+public void update()
+
+public void draw(Graphics g)
+
+public Rectangle getBounds()
+
+7. InputHandler.java
+
+Pola:
+
+Chicken chicken
+
+boolean[] keys
+
+Metody:
+
+public void keyPressed(KeyEvent e)
+
+public void keyReleased(KeyEvent e)
+
+public void keyTyped(KeyEvent e)
+
+8. GameTimer.java
+
+Pola:
+
+long lastTime
+
+int frameRate
+
+boolean isRunning
+
+Metody:
+
+public void start()
+
+public void stop()
+
+public void tick()
+
+public void render()
+
+9. Assets.java
+
+Pola:
+
+BufferedImage chickenImage
+
+BufferedImage carImage
+
+BufferedImage roadImage
+
+Metody:
+
+public static void loadAssets()
+
+public static BufferedImage getImage(String name)
