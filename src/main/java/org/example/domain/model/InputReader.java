@@ -1,16 +1,20 @@
-package org.example.application;
+package org.example.domain.model;
+
+import org.example.domain.repository.InputReaderRepository;
 
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Scanner;
 
-class InputReader {
-    public InputReader(InputStream in) {
-        this.scanner = new Scanner(in);
-    }
-    public InputReader() {
-        this.scanner = new Scanner(System.in);
-    }
+public class InputReader implements InputReaderRepository {
+
     private final Scanner scanner;
+
+    public InputReader(InputStream in) {
+        this.scanner = new Scanner(Objects.requireNonNull(in, "InputStream nie może być nullem"));
+    }
+
+    @Override
     public double readBetAmount(double balance) {
         while (true) {
             System.out.print("Ile chcesz obstawić? ");
@@ -31,6 +35,7 @@ class InputReader {
         }
     }
 
+    @Override
     public double readMultiplier() {
         while (true) {
             System.out.print("Na jaki mnożnik grasz? (np. 2.5): ");
@@ -47,6 +52,7 @@ class InputReader {
         }
     }
 
+    @Override
     public boolean askContinue() {
         while (true) {
             System.out.print("Czy chcesz grać dalej? (tak/nie): ");
