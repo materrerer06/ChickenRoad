@@ -3,14 +3,19 @@ package org.example.application;
 import java.io.InputStream;
 import java.util.Scanner;
 
-class InputReader {
+public class InputReader {
+
+    private final Scanner scanner;
+
     public InputReader(InputStream in) {
         this.scanner = new Scanner(in);
     }
+
     public InputReader() {
         this.scanner = new Scanner(System.in);
     }
-    private final Scanner scanner;
+
+    // Pobranie kwoty zakładu
     public double readBetAmount(double balance) {
         while (true) {
             System.out.print("Ile chcesz obstawić? ");
@@ -31,6 +36,7 @@ class InputReader {
         }
     }
 
+    // Pobranie mnożnika
     public double readMultiplier() {
         while (true) {
             System.out.print("Na jaki mnożnik grasz? (np. 2.5): ");
@@ -47,6 +53,7 @@ class InputReader {
         }
     }
 
+    // Zapytanie, czy kontynuować grę
     public boolean askContinue() {
         while (true) {
             System.out.print("Czy chcesz grać dalej? (tak/nie): ");
