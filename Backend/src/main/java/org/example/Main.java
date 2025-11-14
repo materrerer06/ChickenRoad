@@ -4,7 +4,7 @@ import org.example.application.InputReader;
 import org.example.application.Service.PlayerService;
 import org.example.domain.model.Bet;
 import org.example.domain.model.Player;
-import org.example.infrastructure.repository.InMemoryPlayerRepository;
+import org.example.Infrastructure.inmemory.InMemoryPlayerRepository;
 
 import java.util.ArrayList;
 import java.util.List;

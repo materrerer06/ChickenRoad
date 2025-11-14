@@ -1,4 +1,4 @@
-package org.example.infrastructure.repository;
+package org.example.Infrastructure.inmemory;
 
 import org.example.domain.model.Player;
 import org.example.domain.repository.PlayerRepository;
